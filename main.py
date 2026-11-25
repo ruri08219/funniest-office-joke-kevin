@@ -11,7 +11,8 @@ ENTRY = (
     "We're both still answering emails."
 )
 
-assert "\n" not in ENTRY and 1 <= len(ENTRY) <= MAX_CHARS
+if "\n" in ENTRY or not 1 <= len(ENTRY) <= MAX_CHARS:
+    raise ValueError(f"entry must be one line of 1-{MAX_CHARS} chars, got {len(ENTRY)}")
 
 
 def main() -> None:
