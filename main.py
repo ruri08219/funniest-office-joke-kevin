@@ -3,11 +3,15 @@
 
 import os
 
+MAX_CHARS = 200
+
 ENTRY = (
     "I set my out-of-office to 'I'm on leave, please contact Sarah.' "
     "Sarah set hers to 'I'm on leave, please contact me.' "
     "We're both still answering emails."
 )
+
+assert "\n" not in ENTRY and 1 <= len(ENTRY) <= MAX_CHARS
 
 
 def main() -> None:
